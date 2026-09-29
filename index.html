@@ -1,0 +1,163 @@
+<!-- STAKBASE LANDING PAGE: paste into an Elementor "HTML" widget -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap');
+.sbs{--bg:#fbfcfd;--sky:#e7f2f4;--rose:#f9e6ea;--sun:#fdf1cf;--moss:#e6f0e2;--ink:#2a3a3a;--mut:#5c6d6d;--deep:#2f5a55;--acc:#d98f7a;--line:#d9e6e8;background:var(--bg);color:var(--ink);font:400 17px/1.75 'Work Sans',system-ui,sans-serif}
+.sbs *,.sbs *::before,.sbs *::after{box-sizing:border-box}
+.sbs h1,.sbs h2,.sbs h3{font-family:'Playfair Display',Georgia,serif;font-weight:700;line-height:1.18;margin:0 0 .5em;color:var(--deep)}
+.sbs h1{font-size:clamp(2.3rem,5.6vw,3.9rem)}.sbs h2{font-size:clamp(1.8rem,3.8vw,2.6rem)}.sbs h3{font-size:1.2rem}
+.sbs p{margin:0 0 1em}.sbs a{color:inherit}
+.sbs .w{max-width:1080px;margin:0 auto;padding:0 20px}
+.sbs .bar{display:flex;align-items:center;justify-content:space-between;height:72px}
+.sbs .logo{font:700 1.65rem 'Playfair Display',serif;color:var(--deep);text-decoration:none}.sbs .logo span{color:var(--acc)}
+.sbs nav{display:flex;gap:26px}.sbs nav a{text-decoration:none;color:var(--mut);font-weight:500;font-size:.95rem}
+@media(max-width:760px){.sbs nav{display:none}}
+.sbs .hero{background:var(--sky)}
+.sbs .hg{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center;padding:30px 0 80px}
+.sbs .kick{color:var(--acc);font-weight:600;margin-bottom:10px}
+.sbs .hero p{font-size:1.15rem;color:var(--mut)}
+.sbs .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.sbs .chips span{background:#fff;border-radius:8px;padding:6px 14px;font-weight:500;font-size:.92rem;border:1px solid var(--line)}
+.sbs svg{display:block;width:100%;height:auto}
+@media(max-width:860px){.sbs .hg,.sbs .g3,.sbs .exp,.sbs .faq{grid-template-columns:1fr!important}.sbs .hg svg{max-width:380px;margin:0 auto}}
+.sbs .strip{background:var(--deep);color:#e4f0ee;text-align:center;padding:18px 20px;font:600 clamp(1.05rem,2.4vw,1.5rem) 'Playfair Display',serif}
+.sbs section{padding:84px 0}
+.sbs .head{max-width:720px;margin:0 auto 40px;text-align:center}.sbs .head p{color:var(--mut)}
+.sbs .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sbs .pc{border-radius:24px;padding:22px;text-align:center}.sbs .pc p{color:var(--mut);margin:0}
+.sbs .pc:nth-child(1){background:var(--moss)}.sbs .pc:nth-child(2){background:var(--sun)}.sbs .pc:nth-child(3){background:var(--rose)}
+.sbs .pc svg{max-width:220px;margin:0 auto 12px}
+.sbs .alt{background:var(--moss)}.sbs .alt2{background:var(--sun)}.sbs .alt3{background:var(--rose)}.sbs .alt4{background:var(--sky)}
+.sbs .why{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.sbs .why div{border-top:3px solid var(--acc);padding-top:14px}.sbs .why p{margin:0;color:var(--mut);font-size:.96rem}
+@media(max-width:900px){.sbs .why{grid-template-columns:1fr 1fr}}@media(max-width:520px){.sbs .why{grid-template-columns:1fr}}
+.sbs .hint{text-align:center;color:var(--mut);font-size:.9rem;margin:-20px 0 16px}
+.sbs .track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 18px;margin:0 -20px}
+.sbs .fc{flex:0 0 280px;scroll-snap-align:start;background:#fff;border-radius:24px;padding:24px;border:1px solid var(--line)}
+.sbs .fc .ic{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin-bottom:12px}
+.sbs .fc:nth-child(4n+1) .ic{background:var(--sun)}.sbs .fc:nth-child(4n+2) .ic{background:var(--rose)}.sbs .fc:nth-child(4n+3) .ic{background:var(--sky)}.sbs .fc:nth-child(4n) .ic{background:var(--moss)}
+.sbs .fc p{margin:0;color:var(--mut);font-size:.96rem}
+.sbs .rec{display:grid;grid-template-columns:200px 1fr;gap:6px 28px;padding:22px 0;border-top:1px solid #f0d9dd;align-items:center}
+.sbs .rec:last-child{border-bottom:1px solid #f0d9dd}
+.sbs .rec .lb{font:700 1.5rem 'Playfair Display',serif;color:var(--acc)}.sbs .rec p{margin:0;color:var(--mut)}.sbs .rec h3{margin:0 0 .15em}
+@media(max-width:640px){.sbs .rec{grid-template-columns:1fr}}
+.sbs .exp{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
+.sbs .ex{background:#fff;border-radius:24px;padding:26px}.sbs .ex p{margin:0 0 .6em;color:var(--mut);font-size:.96rem}
+.sbs .ex .ic{font-size:2rem;display:block;margin-bottom:6px}.sbs .ex b{color:var(--deep)}
+.sbs .safe{max-width:720px;margin:26px auto 0;text-align:center;color:var(--mut);font-size:.95rem}
+.sbs .mf{display:grid;grid-template-columns:1fr 1.5fr;gap:12px 20px;max-width:860px;margin:0 auto}
+.sbs .m1{background:var(--rose);border-radius:18px;padding:14px 20px;font-weight:600;color:var(--deep)}.sbs .m2{background:var(--moss);border-radius:18px;padding:14px 20px;color:var(--mut)}
+@media(max-width:700px){.sbs .mf{grid-template-columns:1fr}}
+.sbs .join{background:var(--sun);border-radius:36px;padding:54px 30px;text-align:center}.sbs .join p{max-width:60ch;margin:0 auto 1em;color:var(--mut)}
+.sbs .faq{display:grid;grid-template-columns:1fr 1.5fr;gap:48px;align-items:start}.sbs .faq .s{color:var(--mut)}
+.sbs details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 22px;margin-bottom:12px}
+.sbs summary{cursor:pointer;font:600 1.08rem 'Playfair Display',serif;color:var(--deep)}.sbs details p{margin:10px 0 0;color:var(--mut)}
+.sbs .cta{background:var(--deep);text-align:center}.sbs .cta h2{color:#fff;max-width:20ch;margin:0 auto .4em}
+.sbs .cta p{max-width:56ch;margin:0 auto 1em;color:#d3e6e2}.sbs .cta .lm{color:var(--sun);font-weight:600;margin:0}
+.sbs footer{background:var(--deep);color:#b5cdc9;padding:24px 0;font-size:.9rem;border-top:1px solid #47726c}
+.sbs footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+
+<div class="sbs" id="top">
+<div class="hero">
+<div class="w bar"><a class="logo" href="#top">Stakbase<span>.</span></a>
+<nav><a href="#promise">Why us</a><a href="#facts">Plant facts</a><a href="#lab">Home lab</a><a href="#faq">FAQ</a></nav></div>
+<div class="w hg">
+<div>
+<div class="kick">🌸 Creating a Magical Atmosphere</div>
+<h1>Stakbase: discover the secret life of plants</h1>
+<p>Designed for dreamers, built for doers. Your Online Adventures Platform for curious minds, with surprising plant stories to enjoy Anytime, Anywhere, Anything.</p>
+<p>Click today and unlock exclusive benefits.</p>
+<div class="chips"><span>🌱 Incredible Fun And More</span><span>🔒 Safe &amp; Secure</span><span>✨ Breathtaking Experience</span></div>
+</div>
+<svg viewBox="0 0 420 460" role="img" aria-label="Botanical plate of a flower with labelled parts">
+<circle cx="210" cy="220" r="190" fill="#fff"/><circle cx="210" cy="220" r="190" fill="none" stroke="#cfe0e3" stroke-width="3" stroke-dasharray="6 8"/>
+<path d="M210 250V410" stroke="#6ea38a" stroke-width="7" stroke-linecap="round"/>
+<path d="M210 360C170 350 150 325 146 300C180 300 205 325 210 360Z" fill="#8fbda2"/><path d="M210 330C250 320 270 298 274 274C240 276 216 298 210 330Z" fill="#a9cdb7"/>
+<g fill="#f2b9c3"><ellipse cx="210" cy="140" rx="24" ry="52"/><ellipse cx="210" cy="140" rx="24" ry="52" transform="rotate(45 210 200)"/><ellipse cx="210" cy="140" rx="24" ry="52" transform="rotate(90 210 200)"/><ellipse cx="210" cy="140" rx="24" ry="52" transform="rotate(135 210 200)"/><ellipse cx="210" cy="140" rx="24" ry="52" transform="rotate(180 210 200)"/><ellipse cx="210" cy="140" rx="24" ry="52" transform="rotate(225 210 200)"/><ellipse cx="210" cy="140" rx="24" ry="52" transform="rotate(270 210 200)"/><ellipse cx="210" cy="140" rx="24" ry="52" transform="rotate(315 210 200)"/></g>
+<circle cx="210" cy="200" r="30" fill="#f7d774"/><circle cx="210" cy="200" r="12" fill="#e9b949"/>
+<g font-family="Work Sans,sans-serif" font-size="14" fill="#5c6d6d"><path d="M290 130 L340 110" stroke="#5c6d6d"/><text x="344" y="112">petal</text><path d="M240 200 L340 200" stroke="#5c6d6d"/><text x="344" y="204">centre</text><path d="M214 390 L330 400" stroke="#5c6d6d"/><text x="334" y="404">stem</text><path d="M150 310 L80 330" stroke="#5c6d6d"/><text x="30" y="334">leaf</text></g>
+</svg>
+</div></div>
+<div class="strip">Discover the perfect blend of quality and value.</div>
+</div>
+
+<section id="promise"><div class="w">
+<div class="head"><h2>Because you deserve something truly special ✨</h2><p>More than a product, it's a lifestyle. Three promises guide every story we tell.</p></div>
+<div class="g3">
+<div class="pc"><svg viewBox="0 0 220 160" role="img" aria-label="A Venus flytrap"><path d="M110 150V96" stroke="#6ea38a" stroke-width="7" stroke-linecap="round"/><path d="M60 92C60 50 160 50 160 92C140 84 80 84 60 92Z" fill="#8fbda2"/><path d="M60 96C80 130 140 130 160 96C140 90 80 90 60 96Z" fill="#a9cdb7"/><path d="M70 94l4 10M86 96l3 12M104 97v13M122 97l-3 12M138 96l-4 12M150 94l-5 10" stroke="#f2b9c3" stroke-width="3" stroke-linecap="round"/></svg><h3>Incredible Fun And More</h3><p>Quirky facts, quizzes and small experiments. Try it out today and you'll never be disappointed.</p></div>
+<div class="pc"><svg viewBox="0 0 220 160" role="img" aria-label="A seed protected by a shell"><ellipse cx="110" cy="88" rx="58" ry="52" fill="#e9d3a4"/><ellipse cx="110" cy="88" rx="44" ry="38" fill="#fdf1cf"/><path d="M110 118V84M110 100c-14-2-22-10-24-20 12 0 22 6 24 20M110 92c14-2 22-10 24-20-12 0-22 6-24 20" stroke="#6ea38a" stroke-width="5" fill="none" stroke-linecap="round"/></svg><h3>Safe &amp; Secure</h3><p>Like a seed in its shell, our content is carefully checked and protected. Experience excellence without compromise.</p></div>
+<div class="pc"><svg viewBox="0 0 220 160" role="img" aria-label="A tall tree"><rect x="100" y="80" width="20" height="72" rx="6" fill="#c59a80"/><circle cx="110" cy="58" r="44" fill="#8fbda2"/><circle cx="82" cy="72" r="28" fill="#a9cdb7"/><circle cx="140" cy="72" r="28" fill="#a9cdb7"/><path d="M0 152h220" stroke="#cfe0e3" stroke-width="4"/></svg><h3>Breathtaking Experience</h3><p>From giant trees to tiny seeds, nature's wonders are even better up close. Act fast: limited time, unlimited value.</p></div>
+</div></div></section>
+
+<section class="alt4"><div class="w">
+<div class="head"><h2>Why Stakbase feels different 🌍</h2><p>We are a well-respected name among curious readers, teachers, students and plant lovers.</p></div>
+<div class="why">
+<div><h3>🍀 New chapter of luck begins now</h3><p>Learn something new about the green world today.</p></div>
+<div><h3>🌐 Anytime, Anywhere, Anything</h3><p>Read on any device, at home or on the move.</p></div>
+<div><h3>⏳ Don't wait: your future starts now</h3><p>Curiosity is the best seed to plant early.</p></div>
+<div><h3>🌱 Small changes create big impacts</h3><p>One tiny seed can grow into a towering tree.</p></div>
+</div></div></section>
+
+<section id="facts"><div class="w">
+<div class="head"><p style="color:var(--acc);font-weight:600;margin-bottom:6px">📖 Stakbase guide · 4 min read</p><h2>Eight remarkable things plants can do</h2><p>Plants may look still, but they sense, respond and adapt in surprising ways.</p></div>
+<p class="hint">Swipe or scroll sideways to see all eight ➜</p>
+<div class="track">
+<div class="fc"><div class="ic">🌻</div><h3>Sunflowers follow the sun</h3><p>Young sunflower buds turn to track the sun across the sky. Mature flower heads usually settle facing east.</p></div>
+<div class="fc"><div class="ic">🎍</div><h3>Bamboo grows at record speed</h3><p>Some bamboo species can grow close to a metre in a single day, making them among the fastest-growing plants on Earth.</p></div>
+<div class="fc"><div class="ic">🪰</div><h3>Venus flytraps count touches</h3><p>The trap closes only after its trigger hairs are touched twice within about twenty seconds, which helps it avoid false alarms.</p></div>
+<div class="fc"><div class="ic">🌿</div><h3>Mimosa folds when touched</h3><p>The "sensitive plant" folds its leaves within moments of a touch, a reaction thought to startle hungry insects.</p></div>
+<div class="fc"><div class="ic">🌲</div><h3>Some trees are ancient</h3><p>Bristlecone pines in North America have lived for nearly five thousand years, older than most historic cities.</p></div>
+<div class="fc"><div class="ic">🐛</div><h3>Plants react to chewing sounds</h3><p>In one study, small plants made more defensive chemicals after hearing recordings of caterpillars munching.</p></div>
+<div class="fc"><div class="ic">🍌</div><h3>Bananas are berries</h3><p>Botanically, a banana counts as a berry, while a strawberry does not. Botany has its own rules.</p></div>
+<div class="fc"><div class="ic">🍄</div><h3>Forests may share resources</h3><p>Fungi link tree roots underground. Scientists still debate how much trees share through these networks.</p></div>
+</div></div></section>
+
+<section class="alt3"><div class="w">
+<div class="head"><h2>Plant world records 🏆</h2></div>
+<div class="rec"><div class="lb">Tallest</div><div><h3>Coast redwood</h3><p>The tallest living trees reach over 110 metres, taller than a 30-storey building.</p></div></div>
+<div class="rec"><div class="lb">Fastest</div><div><h3>Moso bamboo</h3><p>A giant grass that can add close to a metre of height in a day during peak growth.</p></div></div>
+<div class="rec"><div class="lb">Oldest single tree</div><div><h3>Bristlecone pine</h3><p>Individual trees have survived for close to five thousand years in harsh mountain soil.</p></div></div>
+<div class="rec"><div class="lb">Patient seed</div><div><h3>Narrow-leaved campion</h3><p>Researchers regrew this small flower from plant tissue preserved in permafrost for around thirty thousand years.</p></div></div>
+</div></section>
+
+<section id="lab"><div class="w">
+<div class="head"><h2>The Stakbase home lab: three tiny experiments 🔬</h2><p>Simple, safe and fun for kids and adults. Younger children should try these with an adult.</p></div>
+<div class="exp">
+<div class="ex"><span class="ic">🫘</span><h3>Bean in a bag</h3><p><b>You need:</b> a bean, a damp paper towel, a clear bag.</p><p>Place the bean on the towel inside the bag and tape it to a window. Within days you can see the root and shoot appear.</p></div>
+<div class="ex"><span class="ic">🥬</span><h3>Colourful celery</h3><p><b>You need:</b> celery, a glass of water, food colouring.</p><p>Stand a stalk in coloured water overnight. The colour climbs the stalk, showing how water travels up a plant.</p></div>
+<div class="ex"><span class="ic">🧭</span><h3>Which way is up?</h3><p><b>You need:</b> a sprouting bean in a clear jar.</p><p>Turn the jar on its side for a few days. Roots bend down and shoots bend up, guided by gravity.</p></div>
+</div>
+<p class="safe">🔒 Never taste experiment plants, and wash hands afterwards. Keep small items away from very young children.</p>
+</div></section>
+
+<section class="alt2"><div class="w">
+<div class="head"><h2>Myth or fact? 🤔</h2></div>
+<div class="mf">
+<div class="m1">"Plants need water every day."</div><div class="m2"><b>Myth.</b> Needs vary. Overwatering harms many plants, so check the soil first.</div>
+<div class="m1">"Plants only need sun and water."</div><div class="m2"><b>Myth.</b> They also need nutrients from soil and air, plus the right temperature.</div>
+<div class="m1">"Plants make oxygen."</div><div class="m2"><b>Fact.</b> Photosynthesis releases oxygen, though plants also use some when they respire.</div>
+<div class="m1">"Brown leaves mean a dead plant."</div><div class="m2"><b>Often myth.</b> A few brown leaves are normal, and roots may still be healthy.</div>
+</div></div></section>
+
+<section><div class="w"><div class="join">
+<h2>Join thousands already making the switch 💬</h2>
+<p>People choose Stakbase because it turns everyday curiosity into small discoveries. Enjoy a Breathtaking Experience with every new story.</p>
+</div></div></section>
+
+<section class="alt" id="faq"><div class="w faq">
+<div><h2>Frequently asked questions ❓</h2><p class="s">Can't find your answer? Our support team replies in plain language.</p></div>
+<div>
+<details><summary>Is it free to join?</summary><p>Yes. You can create an account and read every article for free.</p></details>
+<details><summary>Is it suitable for children?</summary><p>Yes. The stories and experiments are family friendly, with adult supervision advised for younger children.</p></details>
+<details><summary>Are the facts checked?</summary><p>We rely on published research and reputable botanical sources, and we note where scientists still disagree.</p></details>
+<details><summary>Can I use it on my phone?</summary><p>Yes. Every page works on phones, tablets and computers.</p></details>
+</div></div></section>
+
+<section class="cta"><div class="w">
+<h2>Your future starts now with Stakbase 🌿</h2>
+<p>Create a free account and unlock exclusive member benefits. Try it out today and you'll never be disappointed.</p>
+<p class="lm">Act fast: limited time, unlimited value.</p>
+</div></section>
+
+<footer><div class="w"><span>© 2026 Stakbase. Online Adventures Platform.</span><span>Designed for dreamers, built for doers.</span></div></footer>
+</div>
