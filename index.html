@@ -1,66 +1,104 @@
-<!-- STAKBASE LANDING PAGE: paste into an Elementor "HTML" widget -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stakbase: discover the secret life of plants</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap');
-.sbs{--bg:#fbfcfd;--sky:#e7f2f4;--rose:#f9e6ea;--sun:#fdf1cf;--moss:#e6f0e2;--ink:#2a3a3a;--mut:#5c6d6d;--deep:#2f5a55;--acc:#d98f7a;--line:#d9e6e8;background:var(--bg);color:var(--ink);font:400 17px/1.75 'Work Sans',system-ui,sans-serif}
-.sbs *,.sbs *::before,.sbs *::after{box-sizing:border-box}
-.sbs h1,.sbs h2,.sbs h3{font-family:'Playfair Display',Georgia,serif;font-weight:700;line-height:1.18;margin:0 0 .5em;color:var(--deep)}
-.sbs h1{font-size:clamp(2.3rem,5.6vw,3.9rem)}.sbs h2{font-size:clamp(1.8rem,3.8vw,2.6rem)}.sbs h3{font-size:1.2rem}
-.sbs p{margin:0 0 1em}.sbs a{color:inherit}
-.sbs .w{max-width:1080px;margin:0 auto;padding:0 20px}
-.sbs .bar{display:flex;align-items:center;justify-content:space-between;height:72px}
-.sbs .logo{font:700 1.65rem 'Playfair Display',serif;color:var(--deep);text-decoration:none}.sbs .logo span{color:var(--acc)}
-.sbs nav{display:flex;gap:26px}.sbs nav a{text-decoration:none;color:var(--mut);font-weight:500;font-size:.95rem}
-@media(max-width:760px){.sbs nav{display:none}}
-.sbs .hero{background:var(--sky)}
-.sbs .hg{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center;padding:30px 0 80px}
-.sbs .kick{color:var(--acc);font-weight:600;margin-bottom:10px}
-.sbs .hero p{font-size:1.15rem;color:var(--mut)}
-.sbs .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.sbs .chips span{background:#fff;border-radius:8px;padding:6px 14px;font-weight:500;font-size:.92rem;border:1px solid var(--line)}
-.sbs svg{display:block;width:100%;height:auto}
-@media(max-width:860px){.sbs .hg,.sbs .g3,.sbs .exp,.sbs .faq{grid-template-columns:1fr!important}.sbs .hg svg{max-width:380px;margin:0 auto}}
-.sbs .strip{background:var(--deep);color:#e4f0ee;text-align:center;padding:18px 20px;font:600 clamp(1.05rem,2.4vw,1.5rem) 'Playfair Display',serif}
-.sbs section{padding:84px 0}
-.sbs .head{max-width:720px;margin:0 auto 40px;text-align:center}.sbs .head p{color:var(--mut)}
-.sbs .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.sbs .pc{border-radius:24px;padding:22px;text-align:center}.sbs .pc p{color:var(--mut);margin:0}
-.sbs .pc:nth-child(1){background:var(--moss)}.sbs .pc:nth-child(2){background:var(--sun)}.sbs .pc:nth-child(3){background:var(--rose)}
-.sbs .pc svg{max-width:220px;margin:0 auto 12px}
-.sbs .alt{background:var(--moss)}.sbs .alt2{background:var(--sun)}.sbs .alt3{background:var(--rose)}.sbs .alt4{background:var(--sky)}
-.sbs .why{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.sbs .why div{border-top:3px solid var(--acc);padding-top:14px}.sbs .why p{margin:0;color:var(--mut);font-size:.96rem}
-@media(max-width:900px){.sbs .why{grid-template-columns:1fr 1fr}}@media(max-width:520px){.sbs .why{grid-template-columns:1fr}}
-.sbs .hint{text-align:center;color:var(--mut);font-size:.9rem;margin:-20px 0 16px}
-.sbs .track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 18px;margin:0 -20px}
-.sbs .fc{flex:0 0 280px;scroll-snap-align:start;background:#fff;border-radius:24px;padding:24px;border:1px solid var(--line)}
-.sbs .fc .ic{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin-bottom:12px}
-.sbs .fc:nth-child(4n+1) .ic{background:var(--sun)}.sbs .fc:nth-child(4n+2) .ic{background:var(--rose)}.sbs .fc:nth-child(4n+3) .ic{background:var(--sky)}.sbs .fc:nth-child(4n) .ic{background:var(--moss)}
-.sbs .fc p{margin:0;color:var(--mut);font-size:.96rem}
-.sbs .rec{display:grid;grid-template-columns:200px 1fr;gap:6px 28px;padding:22px 0;border-top:1px solid #f0d9dd;align-items:center}
-.sbs .rec:last-child{border-bottom:1px solid #f0d9dd}
-.sbs .rec .lb{font:700 1.5rem 'Playfair Display',serif;color:var(--acc)}.sbs .rec p{margin:0;color:var(--mut)}.sbs .rec h3{margin:0 0 .15em}
-@media(max-width:640px){.sbs .rec{grid-template-columns:1fr}}
-.sbs .exp{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
-.sbs .ex{background:#fff;border-radius:24px;padding:26px}.sbs .ex p{margin:0 0 .6em;color:var(--mut);font-size:.96rem}
-.sbs .ex .ic{font-size:2rem;display:block;margin-bottom:6px}.sbs .ex b{color:var(--deep)}
-.sbs .safe{max-width:720px;margin:26px auto 0;text-align:center;color:var(--mut);font-size:.95rem}
-.sbs .mf{display:grid;grid-template-columns:1fr 1.5fr;gap:12px 20px;max-width:860px;margin:0 auto}
-.sbs .m1{background:var(--rose);border-radius:18px;padding:14px 20px;font-weight:600;color:var(--deep)}.sbs .m2{background:var(--moss);border-radius:18px;padding:14px 20px;color:var(--mut)}
-@media(max-width:700px){.sbs .mf{grid-template-columns:1fr}}
-.sbs .join{background:var(--sun);border-radius:36px;padding:54px 30px;text-align:center}.sbs .join p{max-width:60ch;margin:0 auto 1em;color:var(--mut)}
-.sbs .faq{display:grid;grid-template-columns:1fr 1.5fr;gap:48px;align-items:start}.sbs .faq .s{color:var(--mut)}
-.sbs details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 22px;margin-bottom:12px}
-.sbs summary{cursor:pointer;font:600 1.08rem 'Playfair Display',serif;color:var(--deep)}.sbs details p{margin:10px 0 0;color:var(--mut)}
-.sbs .cta{background:var(--deep);text-align:center}.sbs .cta h2{color:#fff;max-width:20ch;margin:0 auto .4em}
-.sbs .cta p{max-width:56ch;margin:0 auto 1em;color:#d3e6e2}.sbs .cta .lm{color:var(--sun);font-weight:600;margin:0}
-.sbs footer{background:var(--deep);color:#b5cdc9;padding:24px 0;font-size:.9rem;border-top:1px solid #47726c}
-.sbs footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#fbfcfd;--sky:#e7f2f4;--rose:#f9e6ea;--sun:#fdf1cf;--moss:#e6f0e2;--ink:#2a3a3a;--mut:#5c6d6d;--deep:#2f5a55;--acc:#d98f7a;--line:#d9e6e8}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.75 'Work Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:700;line-height:1.18;margin:0 0 .5em;color:var(--deep)}
+h1{font-size:clamp(2.3rem,5.6vw,3.9rem)}
+h2{font-size:clamp(1.8rem,3.8vw,2.6rem)}
+h3{font-size:1.2rem}
+p{margin:0 0 1em}
+a{color:inherit}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+.band{background:var(--sky)}
+nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:26px}
+.logo{font:700 1.65rem 'Playfair Display',serif;color:var(--deep)}
+.logo span{color:var(--acc)}
+.menu{display:flex;gap:26px}
+.menu a{text-decoration:none;color:var(--mut);font-weight:500;font-size:.95rem}
+.hero{background:var(--sky)}
+.hg{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center;padding:30px 20px 80px}
+.kick{color:var(--acc);font-weight:600;margin-bottom:10px}
+.hero p{font-size:1.15rem;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chips span{background:#fff;border-radius:8px;padding:6px 14px;font-weight:500;font-size:.92rem;border:1px solid var(--line)}
+svg{display:block;width:100%;height:auto}
+.strip{background:var(--deep);color:#e4f0ee;text-align:center;padding:18px 20px;font:600 clamp(1.05rem,2.4vw,1.5rem) 'Playfair Display',serif}
+section{padding:84px 0}
+.head{max-width:720px;margin:0 auto 40px;text-align:center}
+.head p{color:var(--mut)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pc{border-radius:24px;padding:22px;text-align:center}
+.pc p{color:var(--mut);margin:0}
+.pc:nth-child(1){background:var(--moss)}
+.pc:nth-child(2){background:var(--sun)}
+.pc:nth-child(3){background:var(--rose)}
+.pc svg{max-width:220px;margin:0 auto 12px}
+.alt{background:var(--moss)}
+.alt2{background:var(--sun)}
+.alt3{background:var(--rose)}
+.alt4{background:var(--sky)}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.why div{border-top:3px solid var(--acc);padding-top:14px}
+.why p{margin:0;color:var(--mut);font-size:.96rem}
+.hint{text-align:center;color:var(--mut);font-size:.9rem;margin:-20px 0 16px}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 18px;margin:0 -20px}
+.fc{flex:0 0 280px;scroll-snap-align:start;background:#fff;border-radius:24px;padding:24px;border:1px solid var(--line)}
+.fc .ic{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin-bottom:12px}
+.fc:nth-child(4n+1) .ic{background:var(--sun)}
+.fc:nth-child(4n+2) .ic{background:var(--rose)}
+.fc:nth-child(4n+3) .ic{background:var(--sky)}
+.fc:nth-child(4n) .ic{background:var(--moss)}
+.fc p{margin:0;color:var(--mut);font-size:.96rem}
+.rec{display:grid;grid-template-columns:200px 1fr;gap:6px 28px;padding:22px 0;border-top:1px solid #f0d9dd;align-items:center}
+.rec:last-child{border-bottom:1px solid #f0d9dd}
+.rec .lb{font:700 1.5rem 'Playfair Display',serif;color:var(--acc)}
+.rec p{margin:0;color:var(--mut)}
+.rec h3{margin:0 0 .15em}
+.exp{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
+.ex{background:#fff;border-radius:24px;padding:26px}
+.ex p{margin:0 0 .6em;color:var(--mut);font-size:.96rem}
+.ex .ic{font-size:2rem;display:block;margin-bottom:6px}
+.ex b{color:var(--deep)}
+.safe{max-width:720px;margin:26px auto 0;text-align:center;color:var(--mut);font-size:.95rem}
+.mf{display:grid;grid-template-columns:1fr 1.5fr;gap:12px 20px;max-width:860px;margin:0 auto}
+.m1{background:var(--rose);border-radius:18px;padding:14px 20px;font-weight:600;color:var(--deep)}
+.m2{background:var(--moss);border-radius:18px;padding:14px 20px;color:var(--mut)}
+.join{background:var(--sun);border-radius:36px;padding:54px 30px;text-align:center}
+.join p{max-width:60ch;margin:0 auto 1em;color:var(--mut)}
+.faq{display:grid;grid-template-columns:1fr 1.5fr;gap:48px;align-items:start}
+.faq .s{color:var(--mut)}
+details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 22px;margin-bottom:12px}
+summary{cursor:pointer;font:600 1.08rem 'Playfair Display',serif;color:var(--deep)}
+details p{margin:10px 0 0;color:var(--mut)}
+.cta{background:var(--deep);text-align:center}
+.cta h2{color:#fff;max-width:20ch;margin:0 auto .4em}
+.cta p{max-width:56ch;margin:0 auto 1em;color:#d3e6e2}
+.cta .lm{color:var(--sun);font-weight:600;margin:0}
+footer{background:var(--deep);color:#b5cdc9;padding:24px 0;font-size:.9rem;border-top:1px solid #47726c}
+footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media(max-width:900px){.why{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){.hg,.g3,.exp,.faq{grid-template-columns:1fr!important}.hg svg{max-width:380px;margin:0 auto}}
+@media(max-width:700px){.mf{grid-template-columns:1fr}}
+@media(max-width:640px){.rec{grid-template-columns:1fr}}
+@media(max-width:520px){.why{grid-template-columns:1fr}}
+@media(max-width:760px){.menu{display:none}}
 </style>
+</head>
+<body>
+<div class="band">
+<div class="w">
+<nav><span class="logo">Stakbase<span>.</span></span><span class="menu"><a href="#promise">Why us</a><a href="#facts">Plant facts</a><a href="#lab">Home lab</a><a href="#faq">FAQ</a></span></nav>
+</div>
+</div>
 
-<div class="sbs" id="top">
-<div class="hero">
-<div class="w bar"><a class="logo" href="#top">Stakbase<span>.</span></a>
-<nav><a href="#promise">Why us</a><a href="#facts">Plant facts</a><a href="#lab">Home lab</a><a href="#faq">FAQ</a></nav></div>
+<header class="hero">
 <div class="w hg">
 <div>
 <div class="kick">🌸 Creating a Magical Atmosphere</div>
@@ -77,9 +115,9 @@
 <circle cx="210" cy="200" r="30" fill="#f7d774"/><circle cx="210" cy="200" r="12" fill="#e9b949"/>
 <g font-family="Work Sans,sans-serif" font-size="14" fill="#5c6d6d"><path d="M290 130 L340 110" stroke="#5c6d6d"/><text x="344" y="112">petal</text><path d="M240 200 L340 200" stroke="#5c6d6d"/><text x="344" y="204">centre</text><path d="M214 390 L330 400" stroke="#5c6d6d"/><text x="334" y="404">stem</text><path d="M150 310 L80 330" stroke="#5c6d6d"/><text x="30" y="334">leaf</text></g>
 </svg>
-</div></div>
-<div class="strip">Discover the perfect blend of quality and value.</div>
 </div>
+</header>
+<div class="strip">Discover the perfect blend of quality and value.</div>
 
 <section id="promise"><div class="w">
 <div class="head"><h2>Because you deserve something truly special ✨</h2><p>More than a product, it's a lifestyle. Three promises guide every story we tell.</p></div>
@@ -160,4 +198,5 @@
 </div></section>
 
 <footer><div class="w"><span>© 2026 Stakbase. Online Adventures Platform.</span><span>Designed for dreamers, built for doers.</span></div></footer>
-</div>
+</body>
+</html>
